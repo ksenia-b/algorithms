@@ -1,15 +1,13 @@
-def insertionSort(nlist):
-   for index in range(1,len(nlist)):
+def insertion_sort(arr):
+    for index in range(1, len(arr)):
+        current_el = arr[index]
+        left_el_index = index - 1
 
-     currentvalue = nlist[index]
-     position = index
+        while left_el_index >= 0 and arr[left_el_index] > current_el:
+            arr[left_el_index + 1] = arr[left_el_index]
+            left_el_index = left_el_index - 1
 
-     while position>0 and nlist[position-1]>currentvalue:
-         nlist[position]=nlist[position-1]
-         position = position-1
+        arr[left_el_index + 1] = current_el
 
-     nlist[position]=currentvalue
 
-nlist = [14,46,43,27,57,41,45,21,70]
-insertionSort(nlist)
-print(nlist)
+insertion_sort([6, 2, 30, 21])
